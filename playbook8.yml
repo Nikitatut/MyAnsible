@@ -1,0 +1,17 @@
+---
+- name: Install Apache and Upload my Web Page
+  hosts: all 
+  become: yes
+
+
+  roles:
+    - { role: deploy_apache_web, when: ansible_system == 'Linux' }
+#  - name: Copy MyHomePage to Servers
+ #   copy: src={{ item }} dest={{ destin_folder }} mode=0555
+  #  with_fileglob: "{{ source_folder }}/*.*"  
+#    copy: src={{ source_folder }}/{{ item }}  dest={{ destin_folder }} mode=0555
+#    loop:
+#     - "index.html"
+
+    
+   
